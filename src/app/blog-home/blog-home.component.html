@@ -1,1 +1,83 @@
-<p>blog-home works!</p>
+<div class="bg-light blog-home">
+  <div class="d-flex user">
+    <h3 class="user-details">
+      Hello,
+      <span *ngIf="loggedInUser">{{ loggedInUser | uppercase }}</span>
+      <span *ngIf="!loggedInUser">there</span>
+    </h3>
+
+    <a routerLink="/login" class="link"> Log Out </a>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 vr-r">
+        <h4>All Blogs</h4>
+        <ng-container *ngIf="allBlogs.length; else noBlogs">
+          <div *ngFor="let blog of allBlogs">
+            <blog-card [blogData]="blog"></blog-card>
+          </div>
+        </ng-container>
+        <ng-template #noBlogs>
+          <h6>No Blogs to show. Create one :) >>></h6>
+        </ng-template>
+      </div>
+      <div class="col-md-6 blog-form">
+        <h4>Create new blog</h4>
+        <form [formGroup]="blogForm">
+          <!-- Email input -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example1">Title</label>
+                  <input
+                    type="email"
+                    id="form2Example1"
+                    class="form-control"
+                    formControlName="blogTitle"
+                  />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example2"
+                    >Description</label
+                  >
+                  <textarea
+                    type="password"
+                    id="form2Example2"
+                    class="form-control"
+                    formControlName="blogDescription"
+                  ></textarea>
+                </div>
+                <div class="blog-status">
+                  <span *ngIf="isBlogCreated" class="success">
+                    Blog Created SuccessFully</span
+                  >
+                  <span
+                    *ngIf="!isBlogCreated && isCreationRequested"
+                    class="failed"
+                  >
+                    Oops! Blog wasn't created. Try again!</span
+                  >
+                </div>
+
+                <!-- Submit button -->
+                <button
+                  type="button"
+                  (click)="createBlog()"
+                  class="btn btn-info btn-block mb-4 login-button"
+                >
+                  Create
+                </button>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

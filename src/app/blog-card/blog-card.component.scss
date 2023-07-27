@@ -1,0 +1,41 @@
+.blog-card {
+  background-color: #39caf0;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 0.5px dotted black;
+}
+
+.main-button {
+  margin-left: 20px;
+}
+
+.post-button {
+  margin-top: 10px;
+}
+
+.comment-form,
+.comment-section {
+  padding-top: 10px;
+}
+
+h5 {
+  border-top: 2px solid aliceblue;
+  border-bottom: 2px solid aliceblue;
+  border-left: 2px solid aliceblue;
+  color: aliceblue;
+  padding: 3px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.comment-content {
+  background-color: aliceblue;
+  color: black;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.comment-fail {
+  color: red;
+  margin-top: 10px;
+}

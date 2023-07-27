@@ -1,0 +1,49 @@
+<div class="blog-card">
+  <h5>{{ blogData.blogTitle }}</h5>
+  <p>{{ blogData.blogDescription }}...</p>
+  <button (click)="getComments()" class="btn btn-light main-button">
+    Comments
+  </button>
+  <button (click)="addComment()" class="btn btn-light main-button">
+    New Comment
+  </button>
+  <div *ngIf="showCommentForm">
+    <hr />
+    <form [formGroup]="commentForm" class="comment-form">
+      <div class="form-outline mb-4">
+        <strong
+          ><label class="form-label" for="form2Example2">Comment</label></strong
+        >
+        <textarea
+          type="password"
+          id="form2Example2"
+          class="form-control"
+          formControlName="commentDetail"
+        ></textarea>
+        <button (click)="postComment()" class="btn btn-light post-button">
+          Post Comment
+        </button>
+        <div class="comment-fail">
+          <span *ngIf="isCommentRequested && !commentCreated"
+            >Oops! Comment Not Posted :( Try again</span
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="showComments" class="comment-section">
+    <hr />
+    <strong><label class="form-label">Comments</label></strong>
+    <ng-container *ngIf="comments.length; else noComments">
+      <ng-container *ngFor="let comment of comments">
+        <div class="comment-content">
+          {{ comment.commentDetail }}
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-template #noComments>
+      <div>No Comments on this Blog yet :( Add First :)</div>
+    </ng-template>
+  </div>
+</div>

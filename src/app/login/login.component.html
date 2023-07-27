@@ -1,40 +1,68 @@
 <div class="login-form">
-    <h1>Login</h1>
-    <form [formGroup]="loginForm">
-        <!-- Email input -->
-        <div class="form-outline mb-4">
-            <input type="email" id="form2Example1" class="form-control" formControlName="username"/>
+  <h1>Login</h1>
+  <form [formGroup]="loginForm">
+    <!-- Email input -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="form-outline mb-4">
+            <input
+              type="email"
+              id="form2Example1"
+              class="form-control"
+              formControlName="username"
+            />
             <label class="form-label" for="form2Example1">Username</label>
-        </div>
+          </div>
 
-        <!-- Password input -->
-        <div class="form-outline mb-4">
-            <input type="password" id="form2Example2" class="form-control" formControlName="password"/>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input
+              type="password"
+              id="form2Example2"
+              class="form-control"
+              formControlName="password"
+            />
             <label class="form-label" for="form2Example2">Password</label>
+          </div>
         </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
 
-        <!-- Submit button -->
-        <button type="button" (click)="validateOrCreateUser()" class="btn btn-primary btn-block mb-4 login-button">Sign in</button>
+    <div *ngIf="inInvalidLogin" class="invalid">
+      <span> Invalid Credentials</span>
+    </div>
 
-        <!-- Register buttons -->
-        <div class="text-center">
-            <p>Not a member? <a routerLink="/register">Register</a></p>
-            <p>or sign up with:</p>
-            <button type="button" class="btn btn-link btn-floating mx-1">
-                <img src="../../assets/facebook.png" class="icon">
-            </button>
+    <!-- Submit button -->
+    <button
+      type="button"
+      (click)="validateOrCreateUser()"
+      class="btn btn-primary btn-block mb-4 login-button"
+    >
+      Sign in
+    </button>
 
-            <button type="button" class="btn btn-link btn-floating mx-1">
-                <img src="../../assets/google.svg" class="icon">
-            </button>
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>Not a member? <a routerLink="/register">Register</a></p>
+      <!-- <p>or sign up with:</p> -->
+      <!-- <button type="button" class="btn btn-link btn-floating mx-1">
+        <img src="../../assets/facebook.png" class="icon" />
+      </button>
 
-            <button type="button" class="btn btn-link btn-floating mx-1">
-                <img src="../../assets/twitter.png" class="icon">
-            </button>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <img src="../../assets/google.svg" class="icon" />
+      </button>
 
-            <button type="button" class="btn btn-link btn-floating mx-1">
-                <img src="../../assets/linkedIn.png" class="icon">
-            </button>
-        </div>
-    </form>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <img src="../../assets/twitter.png" class="icon" />
+      </button>
+
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <img src="../../assets/linkedIn.png" class="icon" />
+      </button> -->
+    </div>
+  </form>
 </div>
