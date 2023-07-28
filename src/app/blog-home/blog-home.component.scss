@@ -1,0 +1,46 @@
+h3 {
+  padding: 20px 100px;
+}
+
+h4 {
+  text-align: center;
+}
+
+h6 {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.vr-r {
+  border-right: 1px solid black;
+}
+
+textarea {
+  height: 100px;
+}
+
+.blog-home {
+  padding-bottom: 50px;
+}
+
+.blog-status {
+  margin-bottom: 20px;
+  .success {
+    color: green;
+  }
+  .failed {
+    color: red;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.user {
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
